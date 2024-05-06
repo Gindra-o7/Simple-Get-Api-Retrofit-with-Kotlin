@@ -1,7 +1,10 @@
 package com.example.retrofit
 
 import android.os.Bundle
+import android.util.Log
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.GridLayoutManager
 import com.example.retrofit.databinding.ActivityPhotoBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,12 +26,19 @@ class PhotoActivity : AppCompatActivity() {
             ) {
                 val code = response.code().toString()
                 if (code.equals("200")) {
-                    setAdapter(response.body())
+                    response.body()?.let {photos ->
+                        val adapter = PhotoAdapter(photos)
+                        val numberOfColumns = 2
+                        val layoutManager = GridLayoutManager(this@PhotoActivity, numberOfColumns)
+                        binding.rvPhoto.layoutManager = layoutManager
+                        binding.rvPhoto.adapter = adapter
+                    }
                 }
             }
 
             override fun onFailure(call: Call<List<Photo>>, t: Throwable) {
-                TODO("Not yet implemented")
+                Log.e("PhotoActivity", "Failed to get photos: ${t.message}")
+                Toast.makeText(this@PhotoActivity, "Failed to get photos: ${t.message}", Toast.LENGTH_SHORT).show()
             }
 
         })

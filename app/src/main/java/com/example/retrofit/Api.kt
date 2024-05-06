@@ -5,7 +5,7 @@ import retrofit2.http.GET
 
 interface Api {
 
-    @GET("photos")
+    @GET("products")
     fun getPhotos(): Call<List<Photo>>
 
 }

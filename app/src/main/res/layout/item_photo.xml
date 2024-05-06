@@ -7,23 +7,45 @@
     
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp">
 
         <TextView
-            android:id="@+id/tv_id"
+            android:id="@+id/tv_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintBaseline_toTopOf="parent"
-            android:text="Id"
-            android:fontFamily="@font/poppinsbold"/>
+            android:text="Price"
+            android:fontFamily="@font/poppinsbold"
+            app:layout_constraintTop_toBottomOf="@+id/tv_category" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_category"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBaseline_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title"
+            android:text="Category"
+            android:fontFamily="@font/poppinsregular"/>
+
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Title"
             app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_id"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
             android:fontFamily="@font/poppinsmedium"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>

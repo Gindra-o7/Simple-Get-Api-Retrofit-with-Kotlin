@@ -4,47 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".DetailActivity"
-    android:layout_margin="10dp">
+    android:layout_margin="20dp">
 
-    <TextView
-        android:id="@+id/tv_albumid"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Album id"
-        android:fontFamily="@font/poppinsbold"/>
+        android:src="@drawable/baseline_keyboard_double_arrow_left_24"
+        android:id="@+id/arrow"
+        android:padding="5dp"
+        android:onClick="onBackClicked"/>
 
-    <TextView
-        android:id="@+id/tv_id"
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Id"
-        android:fontFamily="@font/poppinsbold"
-        android:layout_below="@+id/tv_albumid"/>
+        android:src="@drawable/ic_launcher_background"
+        android:id="@+id/tv_image"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/arrow"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="10dp"/>
 
     <TextView
         android:id="@+id/tv_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
-        android:layout_below="@+id/tv_id"
-        android:fontFamily="@font/poppinsmedium"/>
+        android:layout_below="@+id/tv_image"
+        android:fontFamily="@font/poppinsbold"
+        android:layout_marginBottom="5dp"/>
 
     <TextView
-        android:id="@+id/tv_url"
+        android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Url"
+        android:fontFamily="@font/poppinsbold"
+        android:layout_alignParentEnd="true"
+        android:text="Price"
+        android:textSize="18dp"
+        android:layout_marginBottom="5dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@+id/tv_title"
-        android:fontFamily="@font/poppinsmedium"/>
+        android:id="@+id/tv_category"
+        android:text="Category"
+        android:fontFamily="@font/poppinsmedium"
+        android:layout_marginBottom="10dp"/>
 
     <TextView
-        android:id="@+id/tv_thumbnailUrl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Thumbnail Url"
-        android:layout_below="@+id/tv_url"
-        android:fontFamily="@font/poppinsmedium"/>
+        android:id="@+id/tv_description"
+        android:layout_below="@+id/tv_category"
+        android:text="Description"
+        android:fontFamily="@font/poppinsregular"
+        android:layout_marginBottom="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/tv_description">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_count"
+            android:text="Count"
+            android:fontFamily="@font/poppinssemibold"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rate"
+            android:fontFamily="@font/poppinssemibold"
+            android:layout_gravity="end"
+            android:id="@+id/tv_rate"/>
+
+    </LinearLayout>
 
 </RelativeLayout>
