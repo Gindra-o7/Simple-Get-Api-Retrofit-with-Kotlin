@@ -26,13 +26,7 @@ class PhotoActivity : AppCompatActivity() {
             ) {
                 val code = response.code().toString()
                 if (code.equals("200")) {
-                    response.body()?.let {photos ->
-                        val adapter = PhotoAdapter(photos)
-                        val numberOfColumns = 2
-                        val layoutManager = GridLayoutManager(this@PhotoActivity, numberOfColumns)
-                        binding.rvPhoto.layoutManager = layoutManager
-                        binding.rvPhoto.adapter = adapter
-                    }
+                    setAdapter(response.body())
                 }
             }
 
