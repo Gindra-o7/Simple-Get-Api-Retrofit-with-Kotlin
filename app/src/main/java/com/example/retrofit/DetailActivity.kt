@@ -15,26 +15,26 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        val photoPrice = intent.getDoubleExtra("intent_price", 0.0)
-        val photoTitle = intent.getStringExtra("intent_title")
-        val photoImage = intent.getStringExtra("intent_image")
-        val photoCategory = intent.getStringExtra("intent_category")
-        val photoDescription = intent.getStringExtra("intent_description")
-        val photoCount = intent.getIntExtra("intent_count",0)
-        val photoRate = intent.getDoubleExtra("intent_rate", 0.0)
+        val shopPrice = intent.getDoubleExtra("intent_price", 0.0)
+        val shopTitle = intent.getStringExtra("intent_title")
+        val shopImage = intent.getStringExtra("intent_image")
+        val shopCategory = intent.getStringExtra("intent_category")
+        val shopDescription = intent.getStringExtra("intent_description")
+        val shopCount = intent.getIntExtra("intent_count",0)
+        val shopRate = intent.getDoubleExtra("intent_rate", 0.0)
 
-        binding.tvPrice.text = photoPrice.toString()
-        Glide.with(this).load(photoImage).override(700, 700).into(binding.tvImage)
-        binding.tvTitle.text = photoTitle
-        binding.tvCategory.text = photoCategory.toString()
-        binding.tvDescription.text = photoDescription.toString()
-        binding.tvCount.text = photoCount.toString()
-        binding.tvRate.text = photoRate.toString()
+        binding.tvPrice.text = ("$ $shopPrice")
+        Glide.with(this).load(shopImage).override(700, 700).into(binding.tvImage)
+        binding.tvTitle.text = shopTitle
+        binding.tvCategory.text = shopCategory.toString()
+        binding.tvDescription.text = shopDescription.toString()
+        binding.tvCount.text = shopCount.toString()
+        binding.tvRate.text = shopRate.toString()
 
     }
 
     fun onBackClicked(view: View){
-        val intent = Intent(this, PhotoActivity::class.java)
+        val intent = Intent(this, ShopActivity::class.java)
         startActivity(intent)
     }
 }

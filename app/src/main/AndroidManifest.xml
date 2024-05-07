@@ -18,7 +18,7 @@
             android:name=".DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".PhotoActivity"
+            android:name=".ShopActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,8 +1,6 @@
 package com.example.retrofit
 
-import android.provider.ContactsContract.Data
-
-data class Photo(
+data class Shop(
 
 	val id: Int,
 	val price: Double,

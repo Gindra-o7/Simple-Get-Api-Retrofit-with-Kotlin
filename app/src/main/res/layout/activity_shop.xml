@@ -5,13 +5,13 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PhotoActivity">
+    tools:context=".ShopActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_photo"
+        android:id="@+id/rv_shop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
-        tools:listitem="@layout/item_photo"/>
+        tools:listitem="@layout/item_shop"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

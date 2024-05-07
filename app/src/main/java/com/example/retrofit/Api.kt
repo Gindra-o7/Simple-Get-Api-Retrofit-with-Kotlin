@@ -6,6 +6,6 @@ import retrofit2.http.GET
 interface Api {
 
     @GET("products")
-    fun getPhotos(): Call<List<Photo>>
+    fun getPhotos(): Call<List<Shop>>
 
 }
