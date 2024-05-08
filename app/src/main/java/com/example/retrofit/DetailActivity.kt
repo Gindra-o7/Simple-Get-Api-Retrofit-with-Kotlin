@@ -34,7 +34,6 @@ class DetailActivity : AppCompatActivity() {
     }
 
     fun onBackClicked(view: View){
-        val intent = Intent(this, ShopActivity::class.java)
-        startActivity(intent)
+        finish()
     }
 }
