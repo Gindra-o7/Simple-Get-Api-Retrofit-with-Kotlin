@@ -22,7 +22,7 @@ class ShopAdapter(val listShop: List<Shop>): RecyclerView.Adapter<ShopAdapter.Vi
         holder.binding.tvPrice.text = ("$ ${shop.price}")
         holder.binding.tvTitle.text = shop.title
         holder.binding.tvCategory.text = shop.category
-        Log.d("PhotoAdapter", "photoImage: ${shop.image}")
+        Log.d("ShopAdapter", "shopImage: ${shop.image}")
         Glide.with(holder.itemView.context).load(shop.image).override(300,300).optionalCenterCrop().into(holder.binding.imageView)
 
         holder.itemView.setOnClickListener{
