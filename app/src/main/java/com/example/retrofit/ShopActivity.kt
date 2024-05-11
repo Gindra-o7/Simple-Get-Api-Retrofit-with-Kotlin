@@ -19,28 +19,16 @@ class ShopActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        showLoading(true)
-
         RetrofitClient.instance.getShops().enqueue(object : Callback<List<Shop>> {
             override fun onResponse(
                 call: Call<List<Shop>>,
                 response: Response<List<Shop>>
             ) {
                 showLoading(false)
-                if (response.isSuccessful) {
-                    setAdapter(response.body())
-                } else {
-                    Log.e("ShopActivity", "Failed to get shop: ${response.message()}")
-                    Toast.makeText(
-                        this@ShopActivity,
-                        "Failed to get shop: ${response.message()}",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                }
+                setAdapter(response.body())
             }
 
             override fun onFailure(call: Call<List<Shop>>, t: Throwable) {
-                showLoading(false)
                 Log.e("ShopActivity", "Failed to get shop: ${t.message}")
                 Toast.makeText(
                     this@ShopActivity,
