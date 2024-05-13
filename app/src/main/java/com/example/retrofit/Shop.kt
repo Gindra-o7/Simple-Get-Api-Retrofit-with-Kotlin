@@ -10,4 +10,11 @@ data class Shop(
 	val category: String,
 	val rating: Rating
 
-)
+){
+	data class Rating(
+
+		val rate: Double,
+		val count: Int
+
+	)
+}

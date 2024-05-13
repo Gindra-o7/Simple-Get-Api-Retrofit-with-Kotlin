@@ -31,19 +31,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Title"
-        android:layout_below="@+id/tv_image"
+        android:layout_below="@+id/tv_price"
         android:fontFamily="@font/poppinsbold"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="5dp" />
 
     <TextView
         android:id="@+id/tv_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppinsbold"
-        android:layout_alignParentEnd="true"
         android:text="Price"
         android:textSize="18dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_below="@id/tv_image"
+        android:layout_centerHorizontal="true"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,13 +77,27 @@
             android:fontFamily="@font/poppinssemibold"
             android:layout_weight="1"/>
 
-        <TextView
+        <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rate"
-            android:fontFamily="@font/poppinssemibold"
-            android:layout_gravity="end"
-            android:id="@+id/tv_rate"/>
+            android:id="@+id/rl_rate">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/baseline_grade_24"
+                android:id="@+id/stars"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate"
+                android:fontFamily="@font/poppinssemibold"
+                android:id="@+id/tv_rate"
+                android:layout_toRightOf="@id/stars"/>
+
+        </RelativeLayout>
+
 
     </LinearLayout>
 

@@ -27,8 +27,8 @@ class DetailActivity : AppCompatActivity() {
         binding.tvTitle.text = shopTitle
         binding.tvCategory.text = shopCategory.toString()
         binding.tvDescription.text = shopDescription.toString()
-        binding.tvCount.text = shopCount.toString()
-        binding.tvRate.text = shopRate.toString()
+        binding.tvCount.text = ("Stok Tersedia : $shopCount")
+        binding.tvRate.text = ("$shopRate / 5")
 
     }
 
